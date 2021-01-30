@@ -71,17 +71,17 @@ md res\bin\utils
 call :COPY_ENGINE
 
 cd res
-7z a OpenXRay.%EDITION_NAME%.7z * -xr!.* -xr!*.pdb -x!bin\utils
-7z a Symbols.%EDITION_NAME%.7z bin\*.pdb -i!License.txt -i!README.md -xr!.*
-7z a Utils.%EDITION_NAME%.7z bin\utils\* -i!License.txt -i!README.md -xr!.*
+7z a "OpenXRay.%EDITION_NAME%.7z" * -xr!.* -xr!*.pdb -x!bin\utils
+7z a "Symbols.%EDITION_NAME%.7z" bin\*.pdb -i!License.txt -i!README.md -xr!.*
+7z a "Utils.%EDITION_NAME%.7z" bin\utils\* -i!License.txt -i!README.md -xr!.*
 cd ..
 goto :EOF
 
 :COPY_ENGINE
-copy bin\%PLATFORM_FOLDER%\%CONFIGURATION%\*.dll res\bin\
-copy bin\%PLATFORM_FOLDER%\%CONFIGURATION%\*.exe res\bin\
-copy bin\%PLATFORM_FOLDER%\%CONFIGURATION%\*.pdb res\bin\
-copy bin\%PLATFORM_FOLDER%\%CONFIGURATION%\utils\* res\bin\utils\
+copy "bin\%PLATFORM_FOLDER%\%CONFIGURATION%\*.dll" res\bin\
+copy "bin\%PLATFORM_FOLDER%\%CONFIGURATION%\*.exe" res\bin\
+copy "bin\%PLATFORM_FOLDER%\%CONFIGURATION%\*.pdb" res\bin\
+copy "bin\%PLATFORM_FOLDER%\%CONFIGURATION%\utils\*" res\bin\utils\
 copy License.txt res\
 copy README.md res\
 goto :EOF
